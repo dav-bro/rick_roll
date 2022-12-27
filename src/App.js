@@ -1,32 +1,19 @@
-import './App.css';
-import {useEffect, useState} from "react";
-import IMG from "./img.png"
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Main from "./main.tsx";
+import Test from "./Test.tsx";
 
-const THRESH_SEC = 10;
 const App = () => {
 
-    const [cancel, setCancel] = useState(false);
-    const [seconds, setSeconds] = useState(0);
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="*" element={<Main />} />
 
-     useEffect(() => {
-         if (!cancel) {
-             setTimeout(() => setSeconds(s => s + 1), 1);
-             if (seconds >= THRESH_SEC * 1000) {
-                 window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-             }
-         }
-         else {
-             setSeconds(0);
-         }
+                <Route path="test" element={<Test />} />
+            </Routes>
 
-     }, [cancel, seconds])
-
-    console.log("CANCEL", cancel, seconds/1000)
-  return (
-    <div className={"full middle"} onClick={() => setCancel(c => !c)}>
-        <img src={IMG}/>
-    </div>
-  );
+        </BrowserRouter>
+    )
 }
 
 export default App;
