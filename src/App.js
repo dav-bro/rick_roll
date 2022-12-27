@@ -2,7 +2,7 @@ import './App.css';
 import {useEffect, useState} from "react";
 import IMG from "./img.png"
 
-const THRESH_SEC = 10;
+const THRESH_SEC = 1;
 const App = () => {
 
     const [cancel, setCancel] = useState(false);
