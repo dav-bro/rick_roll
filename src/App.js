@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect} from "react";
+import IMG from "./img.png"
 
-function App() {
+
+const App = () => {
+
+
+
+     useEffect(() => {
+          setTimeout(() => window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 10000)
+     }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={"full middle"}>
+        <img src={IMG}/>
     </div>
   );
 }
